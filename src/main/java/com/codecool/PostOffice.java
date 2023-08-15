@@ -1,5 +1,10 @@
 package com.codecool;
 
+import com.codecool.enums.BoxSizes;
+import com.codecool.model.Box;
+import com.codecool.model.Letter;
+import com.codecool.model.PostItems;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,4 +40,14 @@ public class PostOffice {
         }
         return 0.0;
     }
+
+    //todo: de intrebat pe Tavi
+    public double calculateTotalIncomeBoxes(BoxSizes boxSize){
+        return postItemsList.stream().filter(el->el instanceof Box && ((Box) el).boxSize.equals(boxSize)).mapToDouble(i -> ((Box) i).price).sum();
+    }
+
+    public double calculateTotalIncomeLetters(){
+        return postItemsList.stream().filter(el->el instanceof Letter).mapToDouble(i -> ((Letter) i).price).sum();
+    }
+
 }

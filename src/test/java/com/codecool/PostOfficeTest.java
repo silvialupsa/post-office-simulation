@@ -1,5 +1,9 @@
 package com.codecool;
 
+import com.codecool.enums.BoxSizes;
+import com.codecool.model.Box;
+import com.codecool.model.Letter;
+import com.codecool.model.PostItems;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;

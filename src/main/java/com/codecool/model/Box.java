@@ -1,4 +1,6 @@
-package com.codecool;
+package com.codecool.model;
+
+import com.codecool.enums.BoxSizes;
 
 import java.time.LocalDate;
 
