@@ -1,6 +1,6 @@
 package com.codecool.enums;
 
-public enum BoxSizes {
+public enum BoxSize {
     Big,
     Small
 }

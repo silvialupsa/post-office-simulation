@@ -2,13 +2,13 @@ package com.codecool.model;
 
 import java.time.LocalDate;
 
-public abstract class PostItems {
+public abstract class PostItem {
 
     public String address;
     public LocalDate postDate;
 
 
-    public PostItems(String address, LocalDate postDate) {
+    public PostItem(String address, LocalDate postDate) {
         this.address = address;
         this.postDate = postDate;
     }
@@ -29,8 +29,8 @@ public abstract class PostItems {
         this.postDate = postDate;
     }
 
-    public PostItems convertLetterToPostItem(Letter letter){
-        return (PostItems) letter;
+    public PostItem convertLetterToPostItem(Letter letter){
+        return (PostItem) letter;
     }
 
 }

@@ -2,7 +2,7 @@ package com.codecool.model;
 
 import java.time.LocalDate;
 
-public class Letter extends PostItems{
+public class Letter extends PostItem {
     public String address;
     public LocalDate postDate;
     public Double price;
@@ -35,6 +35,5 @@ public class Letter extends PostItems{
     public Double getPrice() {
         return price;
     }
-
 
 }

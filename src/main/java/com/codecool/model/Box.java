@@ -1,28 +1,28 @@
 package com.codecool.model;
 
-import com.codecool.enums.BoxSizes;
+import com.codecool.enums.BoxSize;
 
 import java.time.LocalDate;
 
-public class Box extends PostItems{
-    public BoxSizes boxSize;
+public class Box extends PostItem {
+    public BoxSize boxSize;
     public String address;
     public LocalDate postDate;
     public int weight;
     public Double price;
 
-    public Box(BoxSizes boxSize, String address, LocalDate postDate, int weight) {
+    public Box(BoxSize boxSize, String address, LocalDate postDate, int weight) {
         super(address, postDate);
         this.boxSize = boxSize;
         this.weight = weight;
-        this.price = setPrice();
+        this.price = calculatePrice();
     }
 
-    public BoxSizes getBoxSizes() {
+    public BoxSize getBoxSizes() {
         return boxSize;
     }
 
-    public void setBoxSizes(BoxSizes boxSize) {
+    public void setBoxSizes(BoxSize boxSize) {
         this.boxSize = boxSize;
     }
 
@@ -58,10 +58,10 @@ public class Box extends PostItems{
         return price;
     }
 
-    public double setPrice() {
-        if(boxSize.equals(BoxSizes.Small)){
+    public double calculatePrice() {
+        if(boxSize.equals(BoxSize.Small)){
             return 7.99;
-        } else if(boxSize.equals(BoxSizes.Big)){
+        } else if(boxSize.equals(BoxSize.Big)){
             return 10.29+0.29*weight;
         }
         return 0.0;
